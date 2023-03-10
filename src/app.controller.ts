@@ -7,8 +7,11 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get()
-  async getHello(): Promise<string> {
-    await helloWorld(`Defer-${Date.now()}`);
-    return this.appService.getHello();
+  async getHello() {
+    const defer = await helloWorld(`Defer-${Date.now()}`);
+    return {
+      hello: this.appService.getHello(),
+      defer,
+    };
   }
 }
