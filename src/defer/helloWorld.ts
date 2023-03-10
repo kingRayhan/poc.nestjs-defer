@@ -7,7 +7,7 @@ async function helloWorld(name: string) {
     setTimeout(() => {
       console.log(`Hello ${name}!`);
       resolve('done');
-    }, 10000);
+    }, 100000);
   });
 }
 
