@@ -12,4 +12,4 @@ async function helloWorld(name: string) {
 }
 
 // the function must be wrapped with `defer()` and exported as default
-export default defer(helloWorld);
+export default defer(helloWorld, { concurrency: 10 });
